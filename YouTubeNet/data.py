@@ -1,12 +1,5 @@
-#-*- coding:utf-8 -*-
-
-# https://github.com/shenweichen/DeepMatch/blob/master/examples/colab_MovieLen1M_YoutubeDNN.ipynb
-
-
 #! wget http://files.grouplens.org/datasets/movielens/ml-1m.zip -O ./ml-1m.zip 
-#! wget https://raw.githubusercontent.com/shenweichen/DeepMatch/master/examples/preprocess.py -O preprocess.py
 #! unzip -o ml-1m.zip 
-
 
 import pandas as pd
 import numpy as np
