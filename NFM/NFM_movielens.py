@@ -30,8 +30,8 @@ train, test = train_test_split(data, test_size = 0.2)
 train_model_input = {name:train[name].values for name in feature_names}
 test_model_input = {name:test[name].values for name in feature_names}
 # 使用NFM进行训练
-# model = NFM(linear_feature_columns, dnn_feature_columns, task='regression', dnn_hidden_units=(256, 128, 64))
-model = DeepFM(linear_feature_columns, dnn_feature_columns, task='regression', dnn_hidden_units=(256, 128, 64)) # dnn_dropout=0.1,
+model = NFM(linear_feature_columns, dnn_feature_columns, task='regression', dnn_hidden_units=(256, 128, 64))
+# model = DeepFM(linear_feature_columns, dnn_feature_columns, task='regression', dnn_hidden_units=(256, 128, 64)) # dnn_dropout=0.1,
 
 model.compile('rmsprop',loss='mse',metrics=['mse'])
 history = model.fit(train_model_input, train[target].values, batch_size=1500, epochs=10, verbose=True, validation_split=0.1)
@@ -42,3 +42,4 @@ rmse = mean_squared_error(test[target].values, pred_ans, squared=False)
 print('test RMSE', rmse)
 # 输出RMSE或者MSE
 
+# !pip install deepctr==0.8.0
