@@ -1,4 +1,5 @@
 
+
 from surprise.model_selection import cross_validate, KFold
 import surprise
 import pandas as pd
@@ -115,10 +116,9 @@ def load_data(file_path):
     return data
 
 if __name__ == "__main__": 
-    train_set = load_data('E:/8.BI名企课程/4.SVD矩阵分解/4-1优秀作业（4）/data/ratings.csv')
+    train_set = load_data('ml-1m/ratings.csv')
     # 基于协同过滤的推荐系统
     # 可以使用的模型：'FunkSVD', 'BiasSVD', 'SVD++', 
-    # 'KNNBaseline', 'SurpriseBaseline','NormalPredictor', 'KNNBasic'
     # 协同过滤：'itemCF'、'userCF'
     model = get_model(train_set, model='SurpriseBaseline') 
     recommand_result = calculate_topN(model=model,data=train_set, topN=5)
