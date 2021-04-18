@@ -1,9 +1,4 @@
-#-*- coding:utf-8 -*-
-
-
 import tensorflow as tf
-# from tensorflow.keras.layers import Lambda, Layer
-
 
 class SequencePoolingLayer(tf.keras.layers.Layer):
 
