@@ -25,7 +25,6 @@ Transformer提取句子（序列化特征）的能力强于RNN
 * 该方法返回两个元素的元组：encoded_transformer_features和encoded_other_features。
 
 ### 结果
-加权的
 不使用hist_rating 对 hist_movie_id 进行加权
 ** TestMAE：0.786 **
 
@@ -37,4 +36,4 @@ Transformer提取句子（序列化特征）的能力强于RNN
 
 * 对每个userID进行全局负采样
 
-增加FM完成类别特征组合，Transformer提取序列化特征，DNN提取类别特征和连续特征
+* 增加FM完成类别特征组合，Transformer提取序列化特征，DNN提取类别特征和连续特征
