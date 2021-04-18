@@ -42,3 +42,5 @@ rmse = mean_squared_error(test[target].values, pred_ans, squared=False)
 print('test RMSE', rmse)
 # 输出RMSE或者MSE
 
+
+# !pip install deepctr==0.8.0
