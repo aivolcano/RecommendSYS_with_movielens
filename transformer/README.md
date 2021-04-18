@@ -10,6 +10,10 @@ Transformer提取句子（序列化特征）的能力强于RNN
 
 * 历史历史评分也可以构成序列hist_movie_id，hist_movie_id 乘以 hist_rating，相当于把使用rating作为权重给movie_id加权，实现每个movie embedding 对应不同userID都不同，更能反应用户平均历史行为爱好，让hist_movie_id中 每个movieID权重为1/n 变为 rating（n为hist_movie_id长度）
 
+
+![feature_extraction](https://user-images.githubusercontent.com/68730894/115144335-bd77ca80-a07e-11eb-99b5-70075fdd37da.png)
+
+
 ### 模型结构
 与DeepFM相似，FM换成Transformer，其余部分保持不变
 
@@ -23,10 +27,10 @@ Transformer提取句子（序列化特征）的能力强于RNN
 ### 结果
 加权的
 不使用hist_rating 对 hist_movie_id 进行加权
-TestMAE：0.786
+** TestMAE：0.786 **
 
 使用hist_rating 对 hist_movie_id 进行加权
-TestMAE：0.752
+** TestMAE：0.752 **
 
 ### 改进方向
 * 最后一个MovieID单独作为一个特征喂给模型，因为有论文表明，最后一个movieid特别重要。
