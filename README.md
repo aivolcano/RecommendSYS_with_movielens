@@ -32,4 +32,4 @@ TestMAE：0.752
 
 * 对每个userID进行全局负采样
 
-增加FM完成类别特征组合，Transformer提取序列化特征，DNN提取类别特征和连续特征
+* 增加FM完成类别特征组合，Transformer提取序列化特征，DNN提取类别特征和连续特征
