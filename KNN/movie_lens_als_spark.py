@@ -1,8 +1,7 @@
 import pandas as pd
 import surprise
 
-# pd_df_ratings = pd.read_csv('D:/note/核心BI：商务智能与推荐系统/week4/L4/MovieLens/ratings_small.csv')
-pd_df_ratings = pd.read_csv('E:/32.Project4CV/SVD4RS/ml-1m/ratings.dat')
+pd_df_ratings = pd.read_csv('ml-1m/ratings.dat')
 # print(pd_df_ratings.head())
 
 def spark_ml():
