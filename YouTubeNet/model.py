@@ -1,12 +1,9 @@
-#-*- coding:utf-8 -*-
-
 import numpy as np
 import tensorflow as tf
-# from tensorflow.keras.layers import Input, Embedding, concatenate, Dense, Dropout
 import tensorflow.keras.backend as K
 from SequencePoolingLayer import SequencePoolingLayer
-import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+# import os # 使用CPU
+# os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 # self-attention
 class Self_Attention(tf.keras.layers.Layer):
