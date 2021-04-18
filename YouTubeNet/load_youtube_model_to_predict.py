@@ -1,18 +1,15 @@
-#-*- coding:utf-8 -*-
-
 import tensorflow as tf
 import numpy as np
-# from tensorflow.keras.models import Model
 
 from model import YouTubeNet
 from data_generator import init_output
 
 
-# 1. Load model
+# 1. 加载模型
 re_model = YouTubeNet()
 re_model.load_weights('YouTubeNet_model.h5')
 
-# 2. Load data
+# 2. 加载数据
 
 user_id, gender, age, occupation, zip, \
         hist_movie_id, hist_len, pos_movie_id, neg_movie_id = init_output()
@@ -42,7 +39,7 @@ hist_len = np.array(hist_len, dtype='int32')
 pos_movie_id = np.array(pos_movie_id, dtype='int32')
 
 
-# 3. Generate user features for testing and full item features for retrieval
+# 3. 生成测试集的用户特征 和 所有item的特征
 
 test_user_model_input = [user_id, gender, age, occupation, zip, hist_movie_id, hist_len]
 all_item_model_input = list(range(0, 3706+1))
