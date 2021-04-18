@@ -1,7 +1,4 @@
-#-*- coding:utf-8 -*-
-
 import tensorflow as tf
-# from tensorflow.keras.optimizers import Adam
 
 from data_generator import file_generator
 from model import YouTubeNet
