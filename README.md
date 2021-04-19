@@ -1,6 +1,12 @@
 # RecommendSYS
 build the ResSys with FunkSVD, FM, itemCF/UserCF, wide&amp;deep with residual net, deepFM with residual net and etc. I try to collect all the algorithm as soon as possible.
 
+推荐算法体系：
+基于标签推荐：SimpleTagBased，NormTagBased，TagBased-TFIDF
+基于内容的推荐（静态推荐） 新产品上线（冷启动问题）
+基于协同过滤：User-CF, Item-CF（动态推荐）
+CTR预估：GBDT+LR, Wide & Deep, FM, FFM, DeepFM, NFM, Deep & Cross, xDeepFM, DIN, DIEN, DSIN
+
 
 ### 基于标签的推荐系统：基于流行度的推荐，热门商品可降权
 点评网站，如：大众点评、豆瓣，用户给某个商品打分，系统会自动提示一些标签，此时我们可以设计的推荐算法及策略有哪些？
