@@ -1,9 +1,8 @@
-# RecommendSYS_with_movielens
+# RecommendSYS
 build the ResSys with FunkSVD, FM, itemCF/UserCF, wide&amp;deep with residual net, deepFM with residual net and etc. I try to collect all the algorithm as soon as possible.
 
-I provide some althogrithm based on movielens
 
-* 基于标签的推荐系统：基于流行度的推荐，热门商品可降权
+### 基于标签的推荐系统：基于流行度的推荐，热门商品可降权
 点评网站，如：大众点评、豆瓣，用户给某个商品打分，系统会自动提示一些标签，此时我们可以设计的推荐算法及策略有哪些？
  * (1) 给用户u推荐整个系统最热门的标签;
  * (2) 给用户u推荐物品i上最热门的标签;
