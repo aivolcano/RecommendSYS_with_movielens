@@ -159,49 +159,49 @@ if __name__ == '__main__':
             score_file.iloc[row, 0] = N[row]
             score_file.iloc[row,index*2+1] =("%.3f%%" %(precision[row]*100))
         score_file.iloc[row,index*2+2] =("%.3f%%" %(recall[row]*100))
-score_file.columns=["推荐数量N","NormTag1_精确率","NormTag1_召回率",
-                    "NormTag2_精确率","NormTag2_召回率","Tag_TFIDF_精确率","Tag_TFIDF_召回率"]
-score_file.to_csv(r"score.csv",encoding='gbk')
-print(score_file)
+    score_file.columns=["推荐数量N","NormTag1_精确率","NormTag1_召回率",
+                        "NormTag2_精确率","NormTag2_召回率","Tag_TFIDF_精确率","Tag_TFIDF_召回率"]
+    score_file.to_csv(r"score.csv",encoding='gbk')
+    print(score_file)
 
-# 算法成绩可视化
-import matplotlib.pyplot as plt
-import matplotlib.ticker as mtick
-plt.rcParams['font.sans-serif'] = 'SimHei'
+    # 算法成绩可视化
+    import matplotlib.pyplot as plt
+    import matplotlib.ticker as mtick
+    plt.rcParams['font.sans-serif'] = 'SimHei'
 
-#s设置画布大小以及大标题、子图之间的距离
-plt.figure(figsize=(8,6),dpi=72)
-plt.suptitle("%10s" %('不同算法的推荐效果'), fontsize=20, fontweight='bold',color='green')
-plt.subplots_adjust(top=0.85,wspace=0.1, hspace=0.5)
-#开始画精确度
-plt.subplot(2,1,1)
-fmt='%.3f%%'
-yticks=mtick.FormatStrFormatter(fmt)
-plt.gca().yaxis.set_major_formatter(yticks) #修改副坐标将major改为minor即可
-plt.title("precision",fontsize=18, fontweight='bold',color='blue')
-plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['SimpleTag_精确率']],label='SimpleTag1',linestyle="--")
-plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['NormTag_精确率']],label='NormTag',linestyle="--")
-plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['Tag_TFIDF_精确率']],label='Tag_TFIDF',linestyle="--")
-plt.yticks([i  for  i  in  np.linspace(0,1.2,6)])
-plt.xlabel("推荐商品数",fontsize=12, fontweight='bold',color='m')
-plt.ylabel("精确率",fontsize=12, fontweight='bold',color='m')
-plt.legend()
-#开始画召回率
-plt.subplot(2,1,2)
-fmt='%.3f%%'
-yticks=mtick.FormatStrFormatter(fmt)
-plt.gca().yaxis.set_major_formatter(yticks) #修改副坐标将major改为minor即可
-plt.title("recall",fontsize=18, fontweight='bold',color='blue')
-plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['SimpleTag_召回率']],label='SimpleTag',marker="o",markersize=4)
-plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['NormTag_召回率']],label='NormTag',marker="x",markersize=4)
-plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['Tag_TFIDF_召回率']],label='Tag_TFIDF',marker="*",markersize=4)
+    #s设置画布大小以及大标题、子图之间的距离
+    plt.figure(figsize=(8,6),dpi=72)
+    plt.suptitle("%10s" %('不同算法的推荐效果'), fontsize=20, fontweight='bold',color='green')
+    plt.subplots_adjust(top=0.85,wspace=0.1, hspace=0.5)
+    #开始画精确度
+    plt.subplot(2,1,1)
+    fmt='%.3f%%'
+    yticks=mtick.FormatStrFormatter(fmt)
+    plt.gca().yaxis.set_major_formatter(yticks) #修改副坐标将major改为minor即可
+    plt.title("precision",fontsize=18, fontweight='bold',color='blue')
+    plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['SimpleTag_精确率']],label='SimpleTag1',linestyle="--")
+    plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['NormTag_精确率']],label='NormTag',linestyle="--")
+    plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['Tag_TFIDF_精确率']],label='Tag_TFIDF',linestyle="--")
+    plt.yticks([i  for  i  in  np.linspace(0,1.2,6)])
+    plt.xlabel("推荐商品数",fontsize=12, fontweight='bold',color='m')
+    plt.ylabel("精确率",fontsize=12, fontweight='bold',color='m')
+    plt.legend()
+    #开始画召回率
+    plt.subplot(2,1,2)
+    fmt='%.3f%%'
+    yticks=mtick.FormatStrFormatter(fmt)
+    plt.gca().yaxis.set_major_formatter(yticks) #修改副坐标将major改为minor即可
+    plt.title("recall",fontsize=18, fontweight='bold',color='blue')
+    plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['SimpleTag_召回率']],label='SimpleTag',marker="o",markersize=4)
+    plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['NormTag_召回率']],label='NormTag',marker="x",markersize=4)
+    plt.plot(score_file['推荐数量N'],[float(i.strip("%")) for i  in  score_file['Tag_TFIDF_召回率']],label='Tag_TFIDF',marker="*",markersize=4)
 
-plt.xlabel("推荐商品数",fontsize=12, fontweight='bold',color='m')
-plt.ylabel("召回率",fontsize=12, fontweight='bold',color='m')
-plt.savefig(r"算法比较.jpg", dpi=72)
-plt.legend()
-plt.show()
+    plt.xlabel("推荐商品数",fontsize=12, fontweight='bold',color='m')
+    plt.ylabel("召回率",fontsize=12, fontweight='bold',color='m')
+    plt.savefig(r"算法比较.jpg", dpi=72)
+    plt.legend()
+    plt.show()
 
 
-    
-    
+
+
