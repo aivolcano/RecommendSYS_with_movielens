@@ -30,3 +30,6 @@ wide & deep
 deepfm
 
 NFM
+
+模型效果表
+![image](https://user-images.githubusercontent.com/68730894/115848155-2a5fdb80-a456-11eb-9b73-aa2fa81695b1.png)
