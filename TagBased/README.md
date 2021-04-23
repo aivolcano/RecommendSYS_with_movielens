@@ -88,6 +88,7 @@ def PrecisionAndRecall(recommend, top_N):
     return (hit/(h_precision*1.0)), (hit/(h_recall*1.0))  
 ```
 
+![算法比较](https://user-images.githubusercontent.com/68730894/115875049-68212c00-a477-11eb-9073-89b07a901b76.jpg)
 
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width="100%"
  style='width:100.0%;border-collapse:collapse;border:none'>
